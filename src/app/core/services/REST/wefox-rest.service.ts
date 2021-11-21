@@ -8,7 +8,7 @@ import { Place } from '../../models/wefox-place.model';
   providedIn: 'root',
 })
 export class WefoxRESTService {
-  private wefoxApiUrl = 'api/v1/posts'; // URL to wefox api
+  private wefoxApiUrl = 'http://localhost:3000/api/v1/posts'; // URL to wefox api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -17,7 +17,7 @@ export class WefoxRESTService {
   constructor(private http: HttpClient) {}
 
   /** GET List from the server */
-  getPlace(): Observable<Place[]> {
+  getPlaces(): Observable<Place[]> {
     return this.http.get<Place[]>(this.wefoxApiUrl).pipe(
       tap((_) => console.log('fetched List')),
       catchError(this.handleError<Place[]>('getPlace', []))
