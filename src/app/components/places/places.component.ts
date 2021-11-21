@@ -23,9 +23,9 @@ export class PlacesComponent implements OnInit {
     this.newPlaceForm = this.formBuilder.group({
       title: ['', [Validators.required, Validators.maxLength(20)]],
       content: ['', [Validators.required, Validators.maxLength(50)]],
-      lat: [''],
-      long: [''],
-      image_url: [''],
+      latitude: [''],
+      longitude: [''],
+      imageUrl: [''],
     });
   }
 

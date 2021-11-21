@@ -1,15 +1,32 @@
 <h2>List of all places</h2>
 
 <form autocomplete="off" [formGroup]="newPlaceFormGroup">
-  <label for="new-place-title"> Title: </label>
-  <input id="new-place-title" #placeTitle formControlName="title" />
+  <mat-form-field appearance="outline">
+    <mat-label>Title</mat-label>
+    <input matInput placeholder="*required" formControlName="title" />
+  </mat-form-field>
 
-  <label for="new-place-content"> Content: </label>
-  <input id="new-place-content" #placeContent formControlName="content" />
+  <mat-form-field appearance="outline">
+    <mat-label>Content</mat-label>
+    <input matInput placeholder="*required" formControlName="content" />
+  </mat-form-field>
 
-  <!-- (click) passes input value to add() and then clears the input -->
+  <mat-form-field appearance="outline">
+    <mat-label>Latitude</mat-label>
+    <input matInput placeholder="optional" formControlName="latitude" />
+  </mat-form-field>
 
-  <button class="add-button" (click)="add()">Add place</button>
+  <mat-form-field appearance="outline">
+    <mat-label>Longitude</mat-label>
+    <input matInput placeholder="optional" formControlName="longitude" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Image URL</mat-label>
+    <input matInput placeholder="optional" formControlName="imageUrl" />
+  </mat-form-field>
+
+  <button mat-stroked-button (click)="add()">Add place</button>
 </form>
 
 <ul>
@@ -17,8 +34,14 @@
     <a routerLink="/detail/{{ place.id }}">
       <span class="badge">{{ place.id }}</span> {{ place.title }}
     </a>
-    <button class="delete" title="delete place" (click)="delete(place)">
-      x
+
+    <button
+      mat-icon-button
+      title="delete place"
+      aria-label="button with an x icon"
+      (click)="delete(place)"
+    >
+      <mat-icon>close</mat-icon>
     </button>
   </li>
 </ul>
