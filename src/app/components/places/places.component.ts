@@ -37,17 +37,7 @@ export class PlacesComponent implements OnInit {
     this.restService.getPlaces().subscribe((places) => (this.places = places));
   }
 
-  add(title: string): void {
-    title = title.trim();
-    if (!title) {
-      return;
-    }
-    this.restService.addPlace({ title } as Place).subscribe((place) => {
-      console.log(`{place.title} was added to places`);
-    });
-  }
-
-  add2(): void {
+  add(): void {
     let { title, content, ...dataToSend } = this.newPlaceForm.value;
 
     if (!title?.trim() || !content?.trim()) {

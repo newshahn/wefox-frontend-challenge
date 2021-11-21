@@ -8,14 +8,8 @@
   <input id="new-place-content" #placeContent formControlName="content" />
 
   <!-- (click) passes input value to add() and then clears the input -->
-  <button
-    class="add-button"
-    (click)="add(placeTitle.value); placeTitle.value = ''"
-  >
-    Add place
-  </button>
 
-  <button class="add-button" (click)="add2()">Add place</button>
+  <button class="add-button" (click)="add()">Add place</button>
 </form>
 
 <ul>
