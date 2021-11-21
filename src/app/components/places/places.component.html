@@ -1,0 +1,30 @@
+<h2>List of all places</h2>
+
+<form autocomplete="off" [formGroup]="newPlaceFormGroup">
+  <label for="new-place-title"> Title: </label>
+  <input id="new-place-title" #placeTitle formControlName="title" />
+
+  <label for="new-place-content"> Content: </label>
+  <input id="new-place-content" #placeContent formControlName="content" />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button
+    class="add-button"
+    (click)="add(placeTitle.value); placeTitle.value = ''"
+  >
+    Add place
+  </button>
+
+  <button class="add-button" (click)="add2()">Add place</button>
+</form>
+
+<ul>
+  <li *ngFor="let place of places">
+    <a routerLink="/detail/{{ place.id }}">
+      <span class="badge">{{ place.id }}</span> {{ place.title }}
+    </a>
+    <button class="delete" title="delete place" (click)="delete(place)">
+      x
+    </button>
+  </li>
+</ul>
