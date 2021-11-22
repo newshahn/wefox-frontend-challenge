@@ -1,1 +1,14 @@
-<p>place-detail works!</p>
+<div *ngIf="place">
+  <h2>{{ place.title | uppercase }} Details</h2>
+  <div><span>id: </span>{{ place.id }}</div>
+  <div>
+    <label for="place-title">place name: </label>
+    <input
+      id="place-title"
+      [(ngModel)]="place.title"
+      placeholder="Place title"
+    />
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>

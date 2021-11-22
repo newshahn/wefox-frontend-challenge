@@ -25,11 +25,11 @@ export class WefoxRESTService {
   }
 
   /** GET places by id. Will 404 if id not found */
-  showPlaceById(id: number): Observable<Place> {
+  getPlace(id: number): Observable<Place> {
     const url = `${this.wefoxApiUrl}/${id}`;
     return this.http.get<Place>(url).pipe(
       tap((_) => console.log(`fetched id=${id}`)),
-      catchError(this.handleError<Place>(`showPlaceById id=${id}`))
+      catchError(this.handleError<Place>(`getPlace id=${id}`))
     );
   }
 
