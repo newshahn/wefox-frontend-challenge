@@ -1,6 +1,6 @@
 <div *ngIf="place">
   <h2>{{ place.title | uppercase }} Details</h2>
-  <div><span>id: </span>{{ place.id }}</div>
+  <!-- <div><span>id: </span>{{ place.id }}</div>
   <div>
     <label for="place-title">place name: </label>
     <input
@@ -8,7 +8,35 @@
       [(ngModel)]="place.title"
       placeholder="Place title"
     />
-  </div>
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
+  </div> -->
+
+  <table>
+    <tr>
+      <th>id</th>
+      <td>{{ place.id }}</td>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <td>{{ place.title }}</td>
+    </tr>
+    <tr>
+      <th>Content</th>
+      <td>{{ place.content }}</td>
+    </tr>
+    <tr>
+      <th>Latitude</th>
+      <td>{{ place.lat }}</td>
+    </tr>
+    <tr>
+      <th>Longitude</th>
+      <td>{{ place.long }}</td>
+    </tr>
+    <tr>
+      <th>Image</th>
+      <td>{{ place.image_url }}</td>
+    </tr>
+  </table>
+
+  <button mat-stroked-button (click)="goBack()">go back</button>
+  <button mat-stroked-button (click)="save()">save</button>
 </div>
