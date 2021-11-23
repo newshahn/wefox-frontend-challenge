@@ -47,7 +47,8 @@ export class WefoxRESTService {
 
   /** PUT: update the place on the server */
   updatePlace(place: Place): Observable<any> {
-    return this.http.put(this.wefoxApiUrl, place, this.httpOptions).pipe(
+    const url = `${this.wefoxApiUrl}/${place.id}`;
+    return this.http.put(url, place, this.httpOptions).pipe(
       tap((_) => console.log(`updated place id=${place.id}`)),
       catchError(this.handleError<any>('updatePlace'))
     );
