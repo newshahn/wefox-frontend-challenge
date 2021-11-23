@@ -1,41 +1,30 @@
 <div *ngIf="place">
   <h2>{{ place.title | uppercase }} Details</h2>
-  <!-- <div><span>id: </span>{{ place.id }}</div>
-  <div>
-    <label for="place-title">place name: </label>
-    <input
-      id="place-title"
-      [(ngModel)]="place.title"
-      placeholder="Place title"
-    />
-  </div> -->
 
-  <table>
-    <tr>
-      <th>id</th>
-      <td>{{ place.id }}</td>
-    </tr>
-    <tr>
-      <th>Title</th>
-      <td>{{ place.title }}</td>
-    </tr>
-    <tr>
-      <th>Content</th>
-      <td>{{ place.content }}</td>
-    </tr>
-    <tr>
-      <th>Latitude</th>
-      <td>{{ place.lat }}</td>
-    </tr>
-    <tr>
-      <th>Longitude</th>
-      <td>{{ place.long }}</td>
-    </tr>
-    <tr>
-      <th>Image</th>
-      <td>{{ place.image_url }}</td>
-    </tr>
-  </table>
+  <mat-form-field appearance="outline">
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="place.title" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Content</mat-label>
+    <input matInput [(ngModel)]="place.content" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Latitude</mat-label>
+    <input matInput [(ngModel)]="place.latitude" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Longitude</mat-label>
+    <input matInput [(ngModel)]="place.longitude" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Image</mat-label>
+    <input matInput [(ngModel)]="place.image_url" />
+  </mat-form-field>
 
   <button mat-stroked-button (click)="goBack()">go back</button>
   <button mat-stroked-button (click)="save()">save</button>
