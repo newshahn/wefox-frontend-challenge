@@ -2,8 +2,9 @@ $container-max-width: 300px;
 
 :host {
   section {
-    margin: 0 auto;
     max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 10px;
 
     &.container__place--add {
       margin-bottom: 40px;
