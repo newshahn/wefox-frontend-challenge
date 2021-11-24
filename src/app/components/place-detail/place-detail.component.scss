@@ -9,6 +9,10 @@ $container-max-width: 300px;
     display: flex;
     flex-direction: column;
 
+    img {
+      margin-bottom: 15px;
+    }
+
     .container__action--buttons {
       display: flex;
       justify-content: space-between;

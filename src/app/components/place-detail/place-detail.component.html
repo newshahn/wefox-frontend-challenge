@@ -8,7 +8,7 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Content</mat-label>
-    <input matInput [(ngModel)]="place.content" />
+    <textarea matInput [(ngModel)]="place.content"></textarea>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
@@ -20,6 +20,12 @@
     <mat-label>Longitude</mat-label>
     <input matInput [(ngModel)]="place.longitude" />
   </mat-form-field>
+
+  <img
+    *ngIf="place.image_url"
+    [src]="place.image_url"
+    [alt]="'picture of' + place.title"
+  />
 
   <mat-form-field appearance="outline">
     <mat-label>Image</mat-label>
