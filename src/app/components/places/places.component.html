@@ -42,20 +42,34 @@
 
 <section class="container__place--list">
   <h2>List of all places</h2>
-  <ul>
-    <li *ngFor="let place of places">
-      <a routerLink="/detail/{{ place.id }}">
-        <span class="badge">{{ place.id }}.</span> {{ place.title }}
-      </a>
 
-      <button
-        mat-icon-button
-        title="delete place"
-        aria-label="button with an x icon"
-        (click)="delete(place)"
-      >
-        <mat-icon>close</mat-icon>
-      </button>
-    </li>
-  </ul>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Delete</th>
+    </tr>
+
+    <tr *ngFor="let place of places">
+      <td>
+        <span>{{ place.id }}</span>
+      </td>
+
+      <td>
+        <a routerLink="/detail/{{ place.id }}">
+          {{ place.title }}
+        </a>
+      </td>
+      <td id="data__button--delete">
+        <button
+          mat-icon-button
+          title="delete place"
+          aria-label="button with an x icon"
+          (click)="delete(place)"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </table>
 </section>
