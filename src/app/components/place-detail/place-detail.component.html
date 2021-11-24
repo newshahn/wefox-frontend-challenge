@@ -1,4 +1,4 @@
-<div *ngIf="place">
+<section *ngIf="place">
   <h2>{{ place.title | uppercase }} Details</h2>
 
   <mat-form-field appearance="outline">
@@ -26,6 +26,14 @@
     <input matInput [(ngModel)]="place.image_url" />
   </mat-form-field>
 
-  <button mat-stroked-button (click)="goBack()">go back</button>
-  <button mat-stroked-button (click)="save()">save</button>
-</div>
+  <div class="container__action--buttons">
+    <button mat-stroked-button (click)="goBack()">go back</button>
+    <button
+      mat-stroked-button
+      (click)="save()"
+      [disabled]="!place.title || !place.content"
+    >
+      save
+    </button>
+  </div>
+</section>

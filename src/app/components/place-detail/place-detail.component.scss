@@ -1,0 +1,20 @@
+$container-max-width: 300px;
+
+:host {
+  section {
+    max-width: $container-max-width;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    .container__action--buttons {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        width: 49%;
+      }
+    }
+  }
+}

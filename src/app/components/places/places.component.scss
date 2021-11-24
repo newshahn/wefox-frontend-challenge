@@ -1,13 +1,13 @@
-$form-max-width: 300px;
+$container-max-width: 300px;
 
 :host {
   .container__place--add {
     margin-bottom: 40px;
+    max-width: $container-max-width;
 
     form {
       display: flex;
       flex-direction: column;
-      max-width: $form-max-width;
     }
   }
 
