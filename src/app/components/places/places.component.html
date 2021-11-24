@@ -26,7 +26,13 @@
       <input matInput placeholder="optional" formControlName="image_url" />
     </mat-form-field>
 
-    <button mat-stroked-button (click)="add()">Add place</button>
+    <button
+      mat-stroked-button
+      (click)="add()"
+      [disabled]="!newPlaceFormGroup.valid"
+    >
+      Add place
+    </button>
   </form>
 </section>
 
