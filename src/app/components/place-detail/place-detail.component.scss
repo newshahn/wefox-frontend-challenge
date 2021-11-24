@@ -4,6 +4,7 @@ $container-max-width: 300px;
   section {
     max-width: $container-max-width;
     margin: 0 auto;
+    padding: 0 10px;
 
     display: flex;
     flex-direction: column;

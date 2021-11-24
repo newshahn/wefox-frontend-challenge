@@ -1,20 +1,24 @@
 $container-max-width: 300px;
 
 :host {
-  .container__place--add {
-    margin-bottom: 40px;
+  section {
+    margin: 0 auto;
     max-width: $container-max-width;
 
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-  }
+    &.container__place--add {
+      margin-bottom: 40px;
 
-  .container__place--list {
-    a {
-      text-decoration: none;
-      color: #ffffff;
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &.container__place--list {
+      a {
+        text-decoration: none;
+        color: #ffffff;
+      }
     }
   }
 }
